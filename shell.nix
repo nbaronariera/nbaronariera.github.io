@@ -1,23 +1,20 @@
-{ pkgs ? import <nixpkgs> {} }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 pkgs.mkShell {
   name = "portfolio-dev";
 
   buildInputs = with pkgs; [
-    # Generador de sitios estáticos
     zola
-
-    # Node.js para Tailwind CSS
     nodejs_20
     nodePackages.npm
-
-    # Utilidades opcionales
-    python3  # Para servidor HTTP simple
+    python3 # Para servidor HTTP simple
   ];
 
   shellHook = ''
     echo ""
-    echo "=== Portfolio Dev Environment ==="
+    echo "=== Portfolio Environment ==="
     echo ""
     echo "Versiones:"
     echo "  Zola:    $(zola --version)"

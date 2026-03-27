@@ -4,22 +4,25 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout del código fuente
         uses: actions/checkout@v4
         with:
-          submodules: true 
+          submodules: true
 
-      - name: Compilar y Desplegar Zola
-        uses: shalzz/zola-deploy-action@v0.12.2
-        
-        env:
-          PAGES_BRANCH: gh-pages
-          BUILD_DIR: public
-          # ZOLA_VERSION: 0.16.1 # Descomenta esta línea si falla por el error de get_section
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Instalar Zola
+        uses: getzola/setup-zola@v2
+       
+      - name: Compilar el sitio
+        run: zola build
+
+      - name: Desplegar en gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public

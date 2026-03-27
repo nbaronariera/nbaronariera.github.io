@@ -1,66 +1,76 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="flex items-center flex-col mt-10">
-  <h1 class="text-2xl text-bold mb-6">
+<div class="flex items-center flex-col mt-10 px-4">
+  <h1 class="text-3xl font-bold text-slate-800 dark:text-white mb-8">
     {{ section.title }}
   </h1>
-  <div class="flex flex-col gap-y-6 w-full px-4 sm:w-2/3">
+  <div class="flex flex-col gap-y-6 w-full max-w-4xl">
     {% if paginator %}
     {% set pages = paginator.pages %}
     {% else %}
     {% set pages = section.pages %}
     {% endif %}
 
+    {% set today = now() | date(format="%Y%m%d") | int %}
     {% for page in pages %}
-      <div class="border border-2 border-blog dark:border-black rounded-xl p-5 shadow-2xl transform transition duration-500 hover:scale-105 bg-web dark:bg-gray-800 flex items-start justify-between" style="min-height: 200px;">
-        <div class="flex flex-col py-2 flex-grow">
-          <h2 class="text-2xl font-bold"><a href="{{ page.permalink }}">{{ page.title }}</a></h2>
-          <p class="font-bold">{{ page.description }}</p>
+      {# Filtro de posts programados: solo mostrar si la fecha es pasada o actual #}
+      {% set page_date = page.date | default(value="1970-01-01") | date(format="%Y%m%d") | int %}
+      {% if page_date <= today %}
+      <article class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 flex items-start justify-between gap-6">
+        <div class="flex flex-col flex-grow">
+          <h2 class="text-2xl font-bold text-slate-800 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-200">
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-1">{{ page.description }}</p>
 
           <!-- Tiempo de lectura y número de palabras -->
-          <div class="flex flex-wrap py-2">
-            <div class="flex items-center w-1/3">
-              <div class="flex space-x-3 text-gray-900 dark:text-gray-400">
-                <span class="flex">
-                  <!-- Icono de reloj -->
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                  <span class="ml-1">{{ page.reading_time }} min</span>
-                </span>
-                <span class="flex">
-                  <!-- Icono de lápiz -->
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-                  </svg>
-                  <span class="ml-1">{{ page.word_count }} palabras</span>
-                </span>
-              </div>
-            </div>
+          <div class="flex flex-wrap items-center gap-4 mt-4 text-sm text-slate-500 dark:text-slate-400">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              {{ page.reading_time }} min
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+              </svg>
+              {{ page.word_count }} palabras
+            </span>
+            {% if page.date %}
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              {{ page.date | date(format="%d %b %Y") }}
+            </span>
+            {% endif %}
           </div>
 
           <!-- Resumen -->
-          <div class="font-bold mt-2">
+          <div class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
             {{ page.summary | safe }}
-            <a class="flex py-2" href="{{ page.permalink }}">
-              Leer más
-              <svg class="w-6 h-6 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </a>
           </div>
+
+          <a class="inline-flex items-center gap-2 mt-4 text-emerald-600 dark:text-emerald-400 font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-200 group/link" href="{{ page.permalink }}">
+            Leer más
+            <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
         </div>
 
-        <!-- Imagen redondeada centrada verticalmente en la derecha -->
+        <!-- Imagen -->
         {% if page.extra.imagenurl %}
-          <div class="flex-shrink-0">
+          <div class="flex-shrink-0 hidden sm:block">
             <a href="{{ page.extra.imagenurl }}" target="_blank">
-              <img src="{{ page.extra.imagenurl }}" alt="Imagen de placeholder" style="width: 300px; height: auto;" class="rounded-md object-cover">
+              <img src="{{ page.extra.imagenurl }}" alt="Imagen del artículo" class="w-48 h-32 rounded-lg object-cover shadow-sm hover:shadow-md transition-shadow duration-200">
             </a>
           </div>
         {% endif %}
-      </div>
+      </article>
+      {% endif %}
     {% endfor %}
 
  </div>
@@ -69,47 +79,45 @@
 
 {% block pagination %}
 {% if paginator.previous or paginator.next %}
-  <div class="max-w-7xl px-2 sm:px-6 lg:px-8 mx-auto w-full">
-    <div class="flex items-center justify-between">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <div class="flex items-center justify-between gap-4">
       {% if not paginator.previous %}
-      <!-- Disabled -->
-        <span class="flex items-center border border-blog dark:border-black rounded-lg px-3 py-4 bg-web text-gray-200">
-          <svg class="w-7 h-7 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <span class="flex items-center gap-2 px-4 py-2 text-slate-400 dark:text-slate-600 cursor-not-allowed">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
           </svg>
-        Previous
-      </span>
+          Anterior
+        </span>
       {% else %}
-      <!-- Active -->
-        <a class="flex items-center border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 dark:hover:text-white px-3 py-4 rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800"  href="{{ paginator.previous }}" {% if not paginator.previous %}disabled{% endif %}>
-          <svg class="w-7 h-7 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <a class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-200 shadow-sm hover:shadow" href="{{ paginator.previous }}">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
           </svg>
-          Previous
+          Anterior
         </a>
       {% endif %}
-      <ul class="flex gap-x-2">
+
+      <ul class="flex gap-2">
         {% for pager in range(start=1, end=paginator.number_pagers+1) %}
-        <li class="">
-          <a class="p-4 border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 hover:text-white rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 {% if paginator.current_index == pager %}bg-blue-500{% else %}bg-gray-200 dark:bg-gray-800{% endif %}" href="{{ paginator.base_url }}{{pager}}" aria-label="Page {{pager}}">
+        <li>
+          <a class="flex items-center justify-center w-10 h-10 rounded-lg text-sm font-medium transition-all duration-200 {% if paginator.current_index == pager %}bg-emerald-600 text-white shadow-sm{% else %}bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700{% endif %}" href="{{ paginator.base_url }}{{pager}}" aria-label="Página {{pager}}">
             {{pager}}
           </a>
         </li>
         {% endfor %}
       </ul>
+
       {% if not paginator.next %}
-        <!-- Disabled -->
-        <span class="flex items-center border border-gray-400 dark:border-black rounded-lg  px-3 py-4 bg-gray-400 text-gray-200">
-          Next Page
-          <svg class="w-7 h-7 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        <span class="flex items-center gap-2 px-4 py-2 text-slate-400 dark:text-slate-600 cursor-not-allowed">
+          Siguiente
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
         </span>
       {% else %}
-      <!-- Active -->
-        <a class="flex items-center border border-gray-400 dark:border-black rounded-lg text-gray-800 dark:text-gray-300 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-600 dark:hover:text-white px-3 py-4 rounded-md text-sm font-medium transform transition duration-500 hover:scale-105 bg-gray-200 dark:bg-gray-800" href="{{ paginator.next }}">
-          Next page
-          <svg class="w-7 h-7 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <a class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-200 shadow-sm hover:shadow" href="{{ paginator.next }}">
+          Siguiente
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
         </a>

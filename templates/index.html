@@ -1,59 +1,41 @@
 {% extends "blow/templates/index.html" %}
 
 {% block projects %}
-{% set content_parts = section.content | split(pat="???????") %}
+{{ section.content | safe }}
 
-<div>
-  <!-- primera parte del contenido -->
-  {{ content_parts[0] | safe }}
-</div>
-
-<div class="flex items-center flex-col"> 
-  <div class="flex flex-col gap-y-6 ">
-    {% if paginator %}
-    {% set pages = paginator.pages %}
-    {% else %}
-    {% set pages = section.pages %}
-    {% endif %}
-
-
-    {% for page in pages %}
-    {% if page.extra.highlight == true %}
-    <div class="border border-2 border-blog dark:border-black rounded-xl p-5 shadow-2xl transform transition duration-500 hover:scale-105 bg-web dark:bg-gray-800 flex items-center">
-        
-      <!-- Contenido a la izquierda -->
-      <div class="flex flex-col py-2 justify-center w-2/3"> <!-- Cambiado a w-2/3 -->
-        <h2 class="text-2xl font-bold"><a href='{{ page.permalink }}'>{{ page.title }}</a></h2>
-        <p class="font-bold">{{ page.description }}</p>
-           
-        <!-- Summary -->
-        <div class="font-bold mt-2">
+{# Proyectos destacados - filtrados por fecha #}
+{% set blog = get_section(path="blog/_index.md") %}
+{% set today = now() | date(format="%Y%m%d") | int %}
+<div class="flex items-center flex-col w-full mt-8">
+  <div class="flex flex-col gap-y-6 w-full max-w-2xl">
+    {% for page in blog.pages %}
+    {# Solo posts destacados con fecha no futura #}
+    {% set page_date = page.date | default(value="1970-01-01") | date(format="%Y%m%d") | int %}
+    {% if page.extra.highlight and page_date <= today %}
+    <article class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 flex items-center gap-4 text-left">
+      <div class="flex flex-col flex-grow min-w-0">
+        <h2 class="text-xl font-bold text-slate-800 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-200">
+          <a href='{{ page.permalink }}'>{{ page.title }}</a>
+        </h2>
+        <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">{{ page.description }}</p>
+        <div class="text-slate-600 dark:text-slate-300 text-sm mt-3 leading-relaxed">
           {{ page.summary | safe }}
-          <a class="flex py-2" href='{{ page.permalink }}'>
-            Leer más
-            <svg class="w-6 h-6 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-            </svg>
-          </a>
         </div>
+        <a class="inline-flex items-center gap-2 mt-3 text-emerald-600 dark:text-emerald-400 text-sm font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-200 group/link" href='{{ page.permalink }}'>
+          Leer más
+          <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
       </div>
-    
       {% if page.extra.imagenurl %}
-      <div class="w-1/3 flex justify-end ml-4">
-        <img class="rounded-md object-cover max-w-[150px] h-auto blog-image" src="{{ page.extra.imagenurl }}" alt="Imagen del post"> <!-- Ajustes de tamaño fijo -->
+      <div class="flex-shrink-0 hidden sm:block">
+        <img class="w-24 h-24 rounded-lg object-cover shadow-sm" src="{{ page.extra.imagenurl }}" alt="Imagen del post">
       </div>
       {% endif %}
-    </div>
-  {% endif %}
-  {% endfor %}
+    </article>
+    {% endif %}
+    {% endfor %}
   </div>
 </div>
-
-
-<div>
-  <p></p>
-  <!-- segunda parte del contenido -->
-  {{ content_parts[1] | safe }}
-</div>
-
 {% endblock %}

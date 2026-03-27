@@ -1,0 +1,974 @@
+    Updating crates.io index
+     Locking 29 packages to latest compatible versions
+      Adding gloo-timers v0.3.0 (available: v0.4.0)
+   0.329943756s  INFO prepare_target{force=false package_id=template v1.0.0 (/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template) target="template"}: cargo::core::compiler::fingerprint: fingerprint error for template v1.0.0 (/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("template", ["cdylib"], "/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/src/lib.rs", Edition2021) }
+   0.330252167s  INFO prepare_target{force=false package_id=template v1.0.0 (/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template) target="template"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/template-6d2ca3ee2f750a62/lib-template`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  16: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  17: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  20: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  21: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+  25: __libc_start_main@@GLIBC_2.34
+  26: <unknown>
+   0.341486252s  INFO prepare_target{force=false package_id=gloo-timers v0.3.0 target="gloo_timers"}: cargo::core::compiler::fingerprint: fingerprint error for gloo-timers v0.3.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("gloo_timers", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gloo-timers-0.3.0/src/lib.rs", Edition2021) }
+   0.341496062s  INFO prepare_target{force=false package_id=gloo-timers v0.3.0 target="gloo_timers"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/gloo-timers-2e8b2cc7ef04dae6/lib-gloo_timers`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  16: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  17: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  18: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  19: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  21: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  22: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  23: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  24: main
+  25: __libc_start_call_main
+  26: __libc_start_main@@GLIBC_2.34
+  27: <unknown>
+   0.341712663s  INFO prepare_target{force=false package_id=futures-channel v0.3.32 target="futures_channel"}: cargo::core::compiler::fingerprint: fingerprint error for futures-channel v0.3.32/Check { test: false }/TargetInner { ..: lib_target("futures_channel", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-channel-0.3.32/src/lib.rs", Edition2018) }
+   0.341719023s  INFO prepare_target{force=false package_id=futures-channel v0.3.32 target="futures_channel"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/futures-channel-421136c930a9b5d0/lib-futures_channel`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  18: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  19: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  22: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  23: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+  27: __libc_start_main@@GLIBC_2.34
+  28: <unknown>
+   0.341920564s  INFO prepare_target{force=false package_id=futures-core v0.3.32 target="futures_core"}: cargo::core::compiler::fingerprint: fingerprint error for futures-core v0.3.32/Check { test: false }/TargetInner { ..: lib_target("futures_core", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-core-0.3.32/src/lib.rs", Edition2018) }
+   0.341933284s  INFO prepare_target{force=false package_id=futures-core v0.3.32 target="futures_core"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/futures-core-897060a57faaa3a4/lib-futures_core`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  18: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  19: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  20: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  21: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  23: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  24: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  25: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  26: main
+  27: __libc_start_call_main
+  28: __libc_start_main@@GLIBC_2.34
+  29: <unknown>
+   0.342125875s  INFO prepare_target{force=false package_id=js-sys v0.3.91 target="js_sys"}: cargo::core::compiler::fingerprint: fingerprint error for js-sys v0.3.91/Check { test: false }/TargetInner { tested: false, doctest: false, ..: lib_target("js_sys", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/js-sys-0.3.91/src/lib.rs", Edition2021) }
+   0.342132885s  INFO prepare_target{force=false package_id=js-sys v0.3.91 target="js_sys"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/js-sys-fd22d50a68363e9b/lib-js_sys`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  18: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  19: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  22: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  23: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+  27: __libc_start_main@@GLIBC_2.34
+  28: <unknown>
+   0.342338226s  INFO prepare_target{force=false package_id=once_cell v1.21.4 target="once_cell"}: cargo::core::compiler::fingerprint: fingerprint error for once_cell v1.21.4/Check { test: false }/TargetInner { ..: lib_target("once_cell", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/once_cell-1.21.4/src/lib.rs", Edition2021) }
+   0.342344956s  INFO prepare_target{force=false package_id=once_cell v1.21.4 target="once_cell"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/once_cell-e2d90f8a3609e77a/lib-once_cell`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  18: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  19: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  20: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  21: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  23: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  24: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  25: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  26: main
+  27: __libc_start_call_main
+  28: __libc_start_main@@GLIBC_2.34
+  29: <unknown>
+   0.342515457s  INFO prepare_target{force=false package_id=wasm-bindgen v0.2.114 target="wasm_bindgen"}: cargo::core::compiler::fingerprint: fingerprint error for wasm-bindgen v0.2.114/Check { test: false }/TargetInner { tested: false, ..: lib_target("wasm_bindgen", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasm-bindgen-0.2.114/src/lib.rs", Edition2021) }
+   0.342521747s  INFO prepare_target{force=false package_id=wasm-bindgen v0.2.114 target="wasm_bindgen"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/wasm-bindgen-0e873389fd40dca4/lib-wasm_bindgen`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  18: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  19: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  20: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  21: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  23: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  24: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  25: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  26: main
+  27: __libc_start_call_main
+  28: __libc_start_main@@GLIBC_2.34
+  29: <unknown>
+   0.342741108s  INFO prepare_target{force=false package_id=cfg-if v1.0.4 target="cfg_if"}: cargo::core::compiler::fingerprint: fingerprint error for cfg-if v1.0.4/Check { test: false }/TargetInner { ..: lib_target("cfg_if", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cfg-if-1.0.4/src/lib.rs", Edition2018) }
+   0.342747318s  INFO prepare_target{force=false package_id=cfg-if v1.0.4 target="cfg_if"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/cfg-if-4a7d0854554f50b2/lib-cfg_if`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  19: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  20: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  21: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  23: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  24: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  25: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  26: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  27: main
+  28: __libc_start_call_main
+  29: __libc_start_main@@GLIBC_2.34
+  30: <unknown>
+   0.343877354s  INFO prepare_target{force=false package_id=wasm-bindgen-shared v0.2.114 target="wasm_bindgen_shared"}: cargo::core::compiler::fingerprint: fingerprint error for wasm-bindgen-shared v0.2.114/Check { test: false }/TargetInner { ..: lib_target("wasm_bindgen_shared", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasm-bindgen-shared-0.2.114/src/lib.rs", Edition2021) }
+   0.343888694s  INFO prepare_target{force=false package_id=wasm-bindgen-shared v0.2.114 target="wasm_bindgen_shared"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/wasm-bindgen-shared-0ad5febfb1017027/lib-wasm_bindgen_shared`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  10: cargo::ops::cargo_compile::compile_ws
+  11: cargo::ops::cargo_compile::compile_with_exec
+  12: cargo::ops::cargo_compile::compile
+  13: cargo::commands::check::exec
+  14: <cargo::cli::Exec>::exec
+  15: cargo::main
+  16: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  17: std::rt::lang_start::<()>::{closure#0}
+  18: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  19: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  20: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  21: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  23: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  24: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  25: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  26: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  27: main
+  28: __libc_start_call_main
+  29: __libc_start_main@@GLIBC_2.34
+  30: <unknown>
+   0.344082125s  INFO prepare_target{force=false package_id=unicode-ident v1.0.24 target="unicode_ident"}: cargo::core::compiler::fingerprint: fingerprint error for unicode-ident v1.0.24/Check { test: false }/TargetInner { ..: lib_target("unicode_ident", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/unicode-ident-1.0.24/src/lib.rs", Edition2021) }
+   0.344089165s  INFO prepare_target{force=false package_id=unicode-ident v1.0.24 target="unicode_ident"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/unicode-ident-361576af5fb5d365/lib-unicode_ident`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: cargo::core::compiler::compile
+   9: cargo::core::compiler::compile
+  10: <cargo::core::compiler::build_runner::BuildRunner>::compile
+  11: cargo::ops::cargo_compile::compile_ws
+  12: cargo::ops::cargo_compile::compile_with_exec
+  13: cargo::ops::cargo_compile::compile
+  14: cargo::commands::check::exec
+  15: <cargo::cli::Exec>::exec
+  16: cargo::main
+  17: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  18: std::rt::lang_start::<()>::{closure#0}
+  19: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  20: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  21: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  22: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  23: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  24: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  25: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  26: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  27: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  28: main
+  29: __libc_start_call_main
+  30: __libc_start_main@@GLIBC_2.34
+  31: <unknown>
+   0.344253736s  INFO prepare_target{force=false package_id=wasm-bindgen-futures v0.4.64 target="wasm_bindgen_futures"}: cargo::core::compiler::fingerprint: fingerprint error for wasm-bindgen-futures v0.4.64/Check { test: false }/TargetInner { ..: lib_target("wasm_bindgen_futures", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wasm-bindgen-futures-0.4.64/src/lib.rs", Edition2021) }
+   0.344260426s  INFO prepare_target{force=false package_id=wasm-bindgen-futures v0.4.64 target="wasm_bindgen_futures"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/wasm-bindgen-futures-70a1e2d1566f8c89/lib-wasm_bindgen_futures`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  16: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  17: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  18: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  19: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  21: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  22: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  23: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  24: main
+  25: __libc_start_call_main
+  26: __libc_start_main@@GLIBC_2.34
+  27: <unknown>
+   0.344486367s  INFO prepare_target{force=false package_id=futures-util v0.3.32 target="futures_util"}: cargo::core::compiler::fingerprint: fingerprint error for futures-util v0.3.32/Check { test: false }/TargetInner { ..: lib_target("futures_util", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-util-0.3.32/src/lib.rs", Edition2018) }
+   0.344492967s  INFO prepare_target{force=false package_id=futures-util v0.3.32 target="futures_util"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/futures-util-252c1943cd27d548/lib-futures_util`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  18: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  19: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  22: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  23: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+  27: __libc_start_main@@GLIBC_2.34
+  28: <unknown>
+   0.344715578s  INFO prepare_target{force=false package_id=futures-task v0.3.32 target="futures_task"}: cargo::core::compiler::fingerprint: fingerprint error for futures-task v0.3.32/Check { test: false }/TargetInner { ..: lib_target("futures_task", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-task-0.3.32/src/lib.rs", Edition2018) }
+   0.344721868s  INFO prepare_target{force=false package_id=futures-task v0.3.32 target="futures_task"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/futures-task-cae257efa291d474/lib-futures_task`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  18: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  19: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  20: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  21: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  23: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  24: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  25: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  26: main
+  27: __libc_start_call_main
+  28: __libc_start_main@@GLIBC_2.34
+  29: <unknown>
+   0.344877458s  INFO prepare_target{force=false package_id=pin-project-lite v0.2.17 target="pin_project_lite"}: cargo::core::compiler::fingerprint: fingerprint error for pin-project-lite v0.2.17/Check { test: false }/TargetInner { doc_scrape_examples: Disabled, ..: lib_target("pin_project_lite", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/pin-project-lite-0.2.17/src/lib.rs", Edition2018) }
+   0.344884418s  INFO prepare_target{force=false package_id=pin-project-lite v0.2.17 target="pin_project_lite"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/pin-project-lite-39c45f83b74c746b/lib-pin_project_lite`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  18: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  19: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  20: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  21: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  23: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  24: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  25: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  26: main
+  27: __libc_start_call_main
+  28: __libc_start_main@@GLIBC_2.34
+  29: <unknown>
+   0.345089179s  INFO prepare_target{force=false package_id=slab v0.4.12 target="slab"}: cargo::core::compiler::fingerprint: fingerprint error for slab v0.4.12/Check { test: false }/TargetInner { ..: lib_target("slab", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/slab-0.4.12/src/lib.rs", Edition2018) }
+   0.345095530s  INFO prepare_target{force=false package_id=slab v0.4.12 target="slab"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/slab-c864e16f77a774fd/lib-slab`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  18: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  19: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  20: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  21: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  22: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  23: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  24: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  25: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  26: main
+  27: __libc_start_call_main
+  28: __libc_start_main@@GLIBC_2.34
+  29: <unknown>
+   0.345249170s  INFO prepare_target{force=false package_id=web-sys v0.3.91 target="web_sys"}: cargo::core::compiler::fingerprint: fingerprint error for web-sys v0.3.91/Check { test: false }/TargetInner { tested: false, doctest: false, ..: lib_target("web_sys", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/web-sys-0.3.91/src/lib.rs", Edition2021) }
+   0.345255840s  INFO prepare_target{force=false package_id=web-sys v0.3.91 target="web_sys"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/web-sys-46d80d0bb20087b2/lib-web_sys`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  16: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  17: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  18: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  19: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  21: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  22: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  23: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  24: main
+  25: __libc_start_call_main
+  26: __libc_start_main@@GLIBC_2.34
+  27: <unknown>
+   0.345798883s  INFO prepare_target{force=false package_id=wee_alloc v0.4.5 target="wee_alloc"}: cargo::core::compiler::fingerprint: fingerprint error for wee_alloc v0.4.5/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("wee_alloc", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wee_alloc-0.4.5/src/lib.rs", Edition2015) }
+   0.345805813s  INFO prepare_target{force=false package_id=wee_alloc v0.4.5 target="wee_alloc"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/wee_alloc-b09c6a532fe74e39/lib-wee_alloc`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  16: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  17: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  18: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  19: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  20: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  21: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  22: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  23: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  24: main
+  25: __libc_start_call_main
+  26: __libc_start_main@@GLIBC_2.34
+  27: <unknown>
+   0.346006624s  INFO prepare_target{force=false package_id=cfg-if v0.1.10 target="cfg_if"}: cargo::core::compiler::fingerprint: fingerprint error for cfg-if v0.1.10/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("cfg_if", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cfg-if-0.1.10/src/lib.rs", Edition2018) }
+   0.346013564s  INFO prepare_target{force=false package_id=cfg-if v0.1.10 target="cfg_if"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/cfg-if-6da4937fb16bfdba/lib-cfg_if`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  18: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  19: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  22: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  23: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+  27: __libc_start_main@@GLIBC_2.34
+  28: <unknown>
+   0.346157435s  INFO prepare_target{force=false package_id=libc v0.2.183 target="libc"}: cargo::core::compiler::fingerprint: fingerprint error for libc v0.2.183/Check { test: false }/TargetInner { ..: lib_target("libc", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/libc-0.2.183/src/lib.rs", Edition2021) }
+   0.346163325s  INFO prepare_target{force=false package_id=libc v0.2.183 target="libc"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/libc-ec34958a92a4227d/lib-libc`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  18: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  19: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  22: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  23: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+  27: __libc_start_main@@GLIBC_2.34
+  28: <unknown>
+   0.346485446s  INFO prepare_target{force=false package_id=memory_units v0.4.0 target="memory_units"}: cargo::core::compiler::fingerprint: fingerprint error for memory_units v0.4.0/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("memory_units", ["lib"], "/home/nbr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/memory_units-0.4.0/src/lib.rs", Edition2015) }
+   0.346492406s  INFO prepare_target{force=false package_id=memory_units v0.4.0 target="memory_units"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/memory_units-c7d8ca5a1aebfcce/lib-memory_units`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  17: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  18: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  19: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  20: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  21: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  22: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  23: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  24: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  25: main
+  26: __libc_start_call_main
+  27: __libc_start_main@@GLIBC_2.34
+  28: <unknown>
+   0.346763828s  INFO prepare_target{force=false package_id=template v1.0.0 (/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template) target="template"}: cargo::core::compiler::fingerprint: fingerprint error for template v1.0.0 (/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("template", ["cdylib"], "/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/src/lib.rs", Edition2021) }
+   0.346772078s  INFO prepare_target{force=false package_id=template v1.0.0 (/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template) target="template"}: cargo::core::compiler::fingerprint:     err: failed to read `/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template/target/debug/.fingerprint/template-fcd96295b41eaf01/test-lib-template`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: <&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  16: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  17: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::panic::unwind_safe::RefUnwindSafe + core::marker::Sync, i32>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{closure#0}
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:581:40
+  20: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panicking.rs:544:19
+  21: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/5fb2ff8611e5a4af4dc85977cfdecfbf3ffa6ade/library/std/src/rt.rs:171:5
+  23: main
+  24: __libc_start_call_main
+  25: __libc_start_main@@GLIBC_2.34
+  26: <unknown>
+    Checking unicode-ident v1.0.24
+    Checking cfg-if v1.0.4
+    Checking once_cell v1.21.4
+    Checking futures-core v0.3.32
+    Checking pin-project-lite v0.2.17
+    Checking futures-task v0.3.32
+    Checking slab v0.4.12
+    Checking libc v0.2.183
+    Checking memory_units v0.4.0
+    Checking cfg-if v0.1.10
+    Checking wasm-bindgen-shared v0.2.114
+    Checking futures-channel v0.3.32
+    Checking futures-util v0.3.32
+    Checking wasm-bindgen v0.2.114
+    Checking wee_alloc v0.4.5
+    Checking js-sys v0.3.91
+    Checking wasm-bindgen-futures v0.4.64
+    Checking gloo-timers v0.3.0
+    Checking web-sys v0.3.91
+    Checking template v1.0.0 (/wherever/st-sync/Programacion/Portfolio/nbaronariera.github.io/rust/template)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 6.93s

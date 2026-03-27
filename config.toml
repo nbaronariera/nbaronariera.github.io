@@ -1,5 +1,5 @@
 # The URL the site will be built for
-base_url = "https://luubstar.github.io/"
+base_url = "https://nbaronariera.github.io/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
@@ -31,7 +31,7 @@ items = [
 [extra.navbar]
 items = [
     { lang = "en", links = [
-        { url = "/blog", name = "Proyectos" },
+        { url = "/blog", name = "Blog" },
     ] },
 ]
 title = "Inicio"
@@ -49,11 +49,11 @@ avatar_alt = "Este soy yo"
 
 [extra.social]
 codeberg = ""
-github = "https://github.com/Luubstar"
+github = "https://github.com/nbaronariera"
 gitlab = ""
 twitter = ""
 mastodon = ""
-linkedin = "https://www.linkedin.com/in/nicol%C3%A1s-barona-riera-6227a1158/?trk=onsite_shorturl"
+linkedin = "https://www.linkedin.com/in/nicol%C3%A1s-barona-riera-6227a1158"
 stackoverflow = ""
 telegram = ""
 email = "nbaronariera@gmail.com"

@@ -1,17 +1,38 @@
 <div>
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
- <link rel="stylesheet" href="/css/estilos-adicionales.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
- <div class="container">
+  <style>
+    .wasm-container-{{id}} {
+      border: 2px solid #333;
+      display: inline-block;
+      background-color: #555;
+    }
+    .wasm-container-{{id}} button {
+      color: #fff;
+      padding: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 5px;
+      margin-top: 3px;
+    }
+    .wasm-container-{{id}} button:hover {
+      background-color: #333;
+    }
+    .wasm-container-{{id}} canvas {
+      width: 100%;
+      background-color: white;
+    }
+  </style>
+
+  <div class="wasm-container-{{id}}">
     <button id="PlayPause{{id}}"><i class="material-icons">play_arrow</i></button>
     <button id="Reiniciar{{id}}"><i class="material-icons">replay</i></button>
     <button id="Minimizar{{id}}">─</button>
     <canvas id="myCanvas{{id}}" width="1200" height="0" tabindex='1'></canvas>
- </div>
+  </div>
 
-
- <script type="module"> 
- import init, {start_system} from "/{{carpeta}}/{{ruta}}/{{ruta}}.js";
-  init().then(() => {start_system("{{id}}");});
- </script>
+  <script type="module">
+    import init, {start_system} from "/wasm/{{module}}/{{module}}.js";
+    init().then(() => {start_system("{{id}}");});
+  </script>
 </div>

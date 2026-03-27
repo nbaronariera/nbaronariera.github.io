@@ -4,7 +4,7 @@ date = 2024-11-22
 description = "Bienvenido a mi portfolio. Aquí explico como funciona y muestro ejemplos interactivos"
 weight = 0
 [extra]
-imagenurl = "/presentation/canvas_snake/snake.jpg"
+imagenurl = "/wasm/snake/snake.jpg"
 highlight = true
 +++
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -19,22 +19,22 @@ No soy diseñador web, el estilo de la web es una versión reconfigurada de la p
 
 Para lograr que este portfolio sea interesante, he creado un sistema de canvas interactivo. Por ejemplo, aquí hay uno vacío:
 
-{{ canvas(id="0", carpeta="presentation",  ruta="placeholder")}}
+{{ canvas(id="0", module="placeholder") }}
 
 Los botones hacen lo siguiente:
-<i class="material-icons">play_arrow</i> y <i class="material-icons">pause</i> inician y pausan el programa, 
+<i class="material-icons">play_arrow</i> y <i class="material-icons">pause</i> inician y pausan el programa,
 <i class="material-icons">replay</i> lo reinicia y
 **─** minimiza la ventana interactiva
 
-Esto es posible gracias a Rust. Rust es un lenguaje de programación de bajo nivel que es seguro en memoria, y tiene la capacidad de compilar a WASM, o Web Assembly, permitiendo así que los programas se ejecuten en cualquier web. Para más información, [puedes leer aquí.](https://rustwasm.github.io/book/) 
+Esto es posible gracias a Rust. Rust es un lenguaje de programación de bajo nivel que es seguro en memoria, y tiene la capacidad de compilar a WASM, o Web Assembly, permitiendo así que los programas se ejecuten en cualquier web. Para más información, [puedes leer aquí.](https://rustwasm.github.io/book/)
 
 # ¡Snake!
 
-![Imagen de Snake de Wikipedia](/presentation/canvas_snake/snake.jpg)
+![Imagen de Snake de Wikipedia](/wasm/snake/snake.jpg)
 
 Snake es un videojuego que se origina en las máquinas arcade, en 1976. La idea del juego es maniobrar la serpiente para comer todas las manzanas posibles sin chocar con las paredes o tu propio cuerpo. Seguramente todos hayáis jugado a una versión de Snake en algún momento de vuestra vida, pues bien, aquí tenéis mi propia versión. No es muy increíble pero es disfrutón.
 
-{{ canvas(id="1", carpeta="presentation",  ruta="canvas_snake")}}
+{{ canvas(id="1", module="snake") }}
 
 ## Controles:
 - W -> Arriba
@@ -45,7 +45,7 @@ Snake es un videojuego que se origina en las máquinas arcade, en 1976. La idea 
 
 ## Cómo está programado
 
-Como ya mencioné, he utilizado Rust como lenguaje de programación. El sistema tiene un loop de juego en el cual la serpiente se mueve, realiza los checks, y luego es dibujada. Para detectar la entrada he añadido eventos en el canvas, que modifican la dirección de la serpiente. 
+Como ya mencioné, he utilizado Rust como lenguaje de programación. El sistema tiene un loop de juego en el cual la serpiente se mueve, realiza los checks, y luego es dibujada. Para detectar la entrada he añadido eventos en el canvas, que modifican la dirección de la serpiente.
 
 ## Qué mejoraría
 

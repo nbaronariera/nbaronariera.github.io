@@ -1,0 +1,28 @@
+[package]
+name = "template"
+description = "Plantilla para módulos WASM del portfolio"
+license = "MIT"
+version = "1.0.0"
+authors = ["Tu Nombre <tu@email.com>"]
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+wee_alloc = "0.4"
+web-sys = { version = "0.3", features = [
+    "Window",
+    "Document",
+    "HtmlCanvasElement",
+    "CanvasRenderingContext2d",
+    "HtmlButtonElement",
+    "console",
+    "KeyboardEvent",
+    "IntersectionObserver",
+    "IntersectionObserverEntry",
+    "IntersectionObserverInit",
+]}
+wasm-bindgen-futures = "0.4"
+gloo-timers = { version = "0.3.0", features = ["futures"] }

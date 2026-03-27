@@ -4,23 +4,30 @@
 
 
 @layer base {
+  /* Tipografía mejorada */
+  html {
+    @apply antialiased;
+  }
+
   h1 {
-    @apply text-2xl;
+    @apply text-3xl font-bold tracking-tight;
   }
   h2 {
-    @apply text-xl;
+    @apply text-2xl font-semibold tracking-tight;
+  }
+  h3 {
+    @apply text-xl font-semibold;
   }
 
   p {
-    @apply pb-4;
+    @apply pb-4 leading-relaxed;
   }
 
   ul, ol {
     @apply list-outside;
-    @apply pl-6; /* Indent the list elements. */
-    @apply mb-4; /* The bottom of the list should have a margin, like the paragraphs. */
+    @apply pl-6;
+    @apply mb-4;
 
-    /* Lists within a list, however, should not have a bottom margin. */
     ul, ol {
       @apply mb-0;
     }
@@ -40,12 +47,16 @@
     }
 
     @apply italic;
-    @apply border-l-2;
-    @apply border-neutral-500;
+    @apply border-l-4;
+    @apply border-emerald-500;
     @apply pl-4;
     @apply mb-4;
     @apply text-neutral-600;
     @apply dark:text-neutral-400;
+    @apply bg-neutral-50;
+    @apply dark:bg-neutral-800/50;
+    @apply py-3;
+    @apply rounded-r-lg;
   }
 }
 
@@ -54,16 +65,185 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Transiciones suaves entre light/dark mode */
+body {
+  @apply transition-colors duration-300;
+}
+
+/* Colores de fondo personalizados */
+.bg-web {
+  background-color: #f8fafc;
+}
+
+.bg-navbar {
+  background-color: #1e293b;
+}
+
+.bg-pagina {
+  background-color: rgba(255, 255, 255, 0.8);
+  @apply backdrop-blur-md;
+}
+
+.border-blog {
+  border-color: #e2e8f0;
+}
+
+/* Dark mode overrides */
+.dark .bg-web {
+  background-color: #1e293b;
+}
+
+.dark .bg-navbar {
+  background-color: #0f172a;
+}
+
+.dark .bg-pagina {
+  background-color: rgba(30, 41, 59, 0.9);
+  @apply backdrop-blur-md;
+}
+
+.dark .border-blog {
+  border-color: #334155;
+}
+
+/* Sombras personalizadas */
+.shadow-soft {
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-card {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-card-hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Navbar con glassmorphism */
+.navbar-glass {
+  @apply bg-white/80 dark:bg-slate-900/80;
+  @apply backdrop-blur-md;
+  @apply border-b border-slate-200 dark:border-slate-700;
+}
+.navbar-glass {
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+}
+
+/* Tarjetas modernas */
+.card-modern {
+  @apply bg-white dark:bg-slate-800;
+  @apply border border-slate-200 dark:border-slate-700;
+  @apply rounded-xl;
+  @apply transition-all duration-300 ease-out;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-modern:hover {
+  @apply -translate-y-1;
+  @apply border-slate-300 dark:border-slate-600;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Links con estilo moderno */
+.link-modern {
+  @apply text-emerald-600 dark:text-emerald-400;
+  @apply hover:text-emerald-700 dark:hover:text-emerald-300;
+  @apply underline-offset-2;
+  @apply transition-colors duration-200;
+}
+
+/* Botones modernos */
+.btn-modern {
+  @apply inline-flex items-center;
+  @apply px-4 py-2;
+  @apply bg-emerald-600 hover:bg-emerald-700;
+  @apply dark:bg-emerald-500 dark:hover:bg-emerald-600;
+  @apply text-white font-medium;
+  @apply rounded-lg;
+  @apply shadow-sm hover:shadow-md;
+  @apply transition-all duration-200;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center;
+  @apply px-4 py-2;
+  @apply bg-slate-100 hover:bg-slate-200;
+  @apply dark:bg-slate-700 dark:hover:bg-slate-600;
+  @apply text-slate-700 dark:text-slate-200;
+  @apply font-medium;
+  @apply rounded-lg;
+  @apply transition-all duration-200;
+}
+
 /* Default Pages content styles */
 #page-content a {
-    @apply underline;
+  @apply text-emerald-600 dark:text-emerald-400;
+  @apply underline decoration-emerald-300 dark:decoration-emerald-600;
+  @apply underline-offset-2;
+  @apply hover:decoration-emerald-500 dark:hover:decoration-emerald-400;
+  @apply transition-colors duration-200;
 }
+
 #page-content p, h2 {
-    @apply py-4;
+  @apply py-4;
 }
+
 #page-content :is(h1, h2, h3, h4, h5, h6) {
-    @apply underline;
+  @apply border-b border-slate-200 dark:border-slate-700;
+  @apply pb-2 mb-4;
 }
+
 #page-content pre {
-    @apply p-4 my-4 overflow-x-auto;
+  @apply p-4 my-4 overflow-x-auto;
+  @apply rounded-lg;
+  @apply bg-slate-900 dark:bg-slate-950;
+  @apply border border-slate-700;
+}
+
+#page-content code:not(pre code) {
+  @apply bg-slate-100 dark:bg-slate-800;
+  @apply px-1.5 py-0.5;
+  @apply rounded;
+  @apply text-sm;
+  @apply text-pink-600 dark:text-pink-400;
+}
+
+/* Badges/Tags */
+.tag {
+  @apply inline-flex items-center;
+  @apply px-2.5 py-0.5;
+  @apply bg-slate-100 dark:bg-slate-700;
+  @apply text-slate-600 dark:text-slate-300;
+  @apply text-xs font-medium;
+  @apply rounded-full;
+  @apply transition-colors duration-200;
+}
+
+.tag:hover {
+  @apply bg-slate-200 dark:bg-slate-600;
+}
+
+/* Mejoras para focus states */
+:focus-visible {
+  @apply outline-none ring-2 ring-emerald-500 ring-offset-2;
+  @apply dark:ring-offset-slate-900;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-slate-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-600;
+  @apply rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-500;
 }

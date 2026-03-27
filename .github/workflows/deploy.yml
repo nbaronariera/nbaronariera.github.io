@@ -16,7 +16,8 @@ jobs:
           submodules: true 
 
       - name: Compilar y Desplegar Zola
-        uses: shalzz/zola-deploy-action@v0.19.0
+        uses: shalzz/zola-deploy-action@v0.12.2
+        
         env:
           PAGES_BRANCH: gh-pages
           BUILD_DIR: public

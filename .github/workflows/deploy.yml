@@ -7,22 +7,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build:
+    name: zbrox/zola-deploy-action
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout del código fuente
-        uses: actions/checkout@v4
-        with:
-          submodules: true
-
-      - name: Instalar Zola
-        uses: getzola/setup-zola@v2
-       
-      - name: Compilar el sitio
-        run: zola build
-
-      - name: Desplegar en gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+    - uses: actions/checkout@master
+    - name: zbrox/zola-deploy-action
+      uses: zbrox/zola-deploy-action@master
+      env:
+        TOKEN: ${{ secrets.TOKEN }}

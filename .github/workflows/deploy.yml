@@ -1,15 +1,24 @@
+name: Despliegue de Zola
+
 on:
   push:
     branches:
       - main
-name: Build and deploy on push
+  workflow_dispatch: 
+
 jobs:
   build:
-    name: zbrox/zola-deploy-action
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: zbrox/zola-deploy-action
-      uses: zbrox/zola-deploy-action@master
-      env:
-        TOKEN: ${{ secrets.TOKEN }}
+      - name: Checkout del código fuente
+        uses: actions/checkout@v4
+        with:
+          submodules: true 
+
+      - name: Compilar y Desplegar Zola
+        uses: shalzz/zola-deploy-action@v0.19.0
+        env:
+          PAGES_BRANCH: gh-pages
+          BUILD_DIR: public
+          # ZOLA_VERSION: 0.16.1 # Descomenta esta línea si falla por el error de get_section
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}

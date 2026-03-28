@@ -6,10 +6,9 @@ paginate_path = "blog"
 paginate_by = 4
 +++
 # Sobre mi
-Me llamo Nicolás Barona, y soy estudiante de ingeniería informática, y me centro en el desarrollo de software.
-Llevo programando desde los 12 años, y este blog sirve para almacenar y mostrar mis proyectos.
+Soy Nicolás Barona Riera, estudiante en la Universidad Politécnica de Valencia (UPV) con un enfoque directo en ciberseguridad y desarrollo de software robusto. Me interesa la intersección entre el rendimiento, la arquitectura de sistemas y el código seguro por diseño, razón por la cual priorizo el uso de **Rust**.
 
-Para más información sobre mi educación, conocimientos y experiencia, visita mi LinkedIn o mi [currículum](https://github.com/Luubstar/Luubstar/blob/main/Curr%C3%ADculum.pdf)
+Para más información sobre mi educación, conocimientos y experiencia, visita mi LinkedIn o Github.
 
 <p></p>
 

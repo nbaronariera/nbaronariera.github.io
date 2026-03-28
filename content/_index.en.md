@@ -6,10 +6,9 @@ paginate_path = "blog"
 paginate_by = 4
 +++
 # About me
-My name is Nicolás Barona, and I'm a computer engineering student focused on software development.
-I've been programming since I was 12 years old, and this blog serves to store and showcase my projects.
+I am Nicolás Barona Riera, a student at the Polytechnic University of Valencia (UPV) with a core focus on cybersecurity and robust software development. I am interested in the intersection of performance, systems architecture, and secure-by-design code, which is why I prioritize using Rust.
 
-For more information about my education, skills and experience, visit my LinkedIn or my [resume](https://github.com/Luubstar/Luubstar/blob/main/Curr%C3%ADculum.pdf)
+For more information about my education, skills, and experience, please visit my LinkedIn or GitHub
 
 <p></p>
 

@@ -1,7 +1,7 @@
 +++
 title = "Welcome!"
 date = 2024-11-22
-description = "Welcome to my portfolio. Here I explain how it works and show interactive examples"
+description = "Welcome to my portfolio. Here I explain how it works and showcase interactive examples."
 weight = 0
 
 [taxonomies]
@@ -16,53 +16,66 @@ highlight = true
 
 # Welcome to my interactive portfolio
 
-Hello! I'm Nicolás, a computer engineering student. As part of my learning process, I've created this small interactive portfolio.
+Hi! I'm Nicolás, a computer engineering student focused on robust software development. This space is not just a static resume, but an interactive portfolio I've built as part of my continuous learning process.
 
-I'm not a web designer, the style of the website is a reconfigured version of the [blow](https://github.com/tchartron/blow) template. To create this website I used [Zola](https://www.getzola.org/documentation/getting-started/overview/), which allows using templates and markdown to build the site.
+Since my main focus is systems architecture and backend development, I chose to adapt the excellent [blow](https://github.com/tchartron/blow) theme for Zola. This allows me to use Markdown and templates to build the website efficiently, focusing my efforts on what really interests me: the code.
 
 # Interactive examples
 
-To make this portfolio interesting, I've created an interactive canvas system. For example, here's an empty one:
+To bring this portfolio to life, I've implemented a system of interactive *canvases*. Here is a test canvas:
 
 {{ canvas(id="0", module="placeholder") }}
 
-The buttons do the following:
-<i class="material-icons">play_arrow</i> and <i class="material-icons">pause</i> start and pause the program,
-<i class="material-icons">replay</i> restarts it and
-**─** minimizes the interactive window
+The controls are simple:
+* <i class="material-icons">play_arrow</i> and <i class="material-icons">pause</i> start and pause the execution.
+* <i class="material-icons">replay</i> resets the state.
+* **─** minimizes the interactive window.
 
-This is possible thanks to Rust. Rust is a low-level programming language that is memory-safe, and has the ability to compile to WASM, or Web Assembly, thus allowing programs to run on any website. For more information, [you can read here.](https://rustwasm.github.io/book/)
+The magic behind this is **Rust** compiled to **WebAssembly (WASM)**. Rust is a systems programming language that guarantees memory safety without needing a garbage collector. By compiling this code to WASM, we can runs logic directly in the browser, integrating seamlessly with the web. 
+
+For more information about this ecosystem, I recommend [the official Rust and WebAssembly book.](https://rustwasm.github.io/book/)
 
 # Snake!
 
-![Snake image from Wikipedia](/wasm/snake/snake.jpg)
+!(/wasm/snake/snake.jpg)
 
-Snake is a video game that originated in arcade machines in 1976. The idea of the game is to maneuver the snake to eat as many apples as possible without hitting the walls or your own body. You've probably all played a version of Snake at some point in your life, so here's my own version. It's not very impressive but it's enjoyable.
+Everyone knows the classic 1976 arcade game Snake. The goal is simple: maneuver the snake to eat as many apples as possible without crashing into the walls or your own body. 
+
+This is my own implementation. It's a concise project, but it serves as an excellent proving ground to demonstrate the viability of integrating low-level logic in an interactive web environment. Go ahead and try it out!
 
 {{ canvas(id="1", module="snake") }}
 
 ## Controls:
-- W -> Up
-- S -> Down
-- D -> Right
-- A -> Left
-- Esc -> End game
+- **W** -> Up
+- **S** -> Down
+- **D** -> Right
+- **A** -> Left
+- **Esc** -> End game
 
-## How it's programmed
+*(Note: Make sure to click inside the game box so it registers your keystrokes).*
 
-As I mentioned, I used Rust as the programming language. The system has a game loop in which the snake moves, performs checks, and then is drawn. To detect input I added events on the canvas that modify the snake's direction.
+## Under the hood
 
-## What I would improve
+The core of the system is a game loop written entirely in Rust. In each iteration (*tick*), the engine updates the snake's position, evaluates collisions, and calculates the new state. For user input, I intercept browser keyboard events and pass them to the WASM game state to modify the direction vector.
 
-### KISS Principle (Keep It Simple Stupid)
+## Iteration and lessons learned
 
-I think the biggest problem I had with the game was the complexity I added myself. At first, the snake blocks were stored as a linked list, meaning they kept memory references to each part. This was complicated to navigate, especially considering it only stored the position. In the end I changed it to a vector and the result is much better.
+Software development is a constant process of refactoring. Here I outline some technical challenges I faced and how I plan to improve them.
 
-### Proper library
+### Data structures: The evolution of the snake
 
-My system for converting my Rust code into a WASM program isn't perfect. I need to improve the library (and maybe publish it) so that it's easily manageable. The main idea is to separate logic from presentation as much as possible.
+Initially, I modeled the snake's body using a linked list (`LinkedList`), storing the coordinates of each segment. However, in languages like Rust, linked lists scatter allocations across the *heap*, destroying CPU cache locality.
+
+To optimize this, I migrated to a standard vector (`Vec`). Performance improved, but architecturally it is still not the mathematically optimal solution. As the snake moves forward, I remove the tail and add a new head. In a `Vec`, removing the first element forces all other elements to shift in memory, resulting in a time complexity of O(n). 
+
+The logical next step to apply the principle of efficiency is to refactor to a double-ended queue, specifically a `VecDeque` in Rust. By functioning as a circular buffer, it will allow me to add elements to the head and remove them from the tail with O(1) complexity, achieving a much more robust system. However, for this demo, the current implementation is sufficient; the snake will not grow large enough for this to become a performance bottleneck.
+
+### Clean architecture: Separating layers
+
+Currently, the bridge between my Rust code and the browser rendering works well, but it is tightly coupled. My short-term goal is to encapsulate this integration into a more manageable library. The objective is to achieve an architecture where the game state (Rust) is pure and agnostic, limiting itself to exposing a linear memory buffer that the presentation layer (JavaScript/HTML5 Canvas) simply takes care of drawing. I am not sure yet if I will publish the library separately, but you can access all the files for this page from the [official repository](https://github.com/nbaronariera/nbaronariera.github.io).
 
 ---
 
-That's all for today's presentation. I hope you enjoy your stay at my portfolio and if you're interested in my work, my email is [nbaronariera@gmail.com](mailto:nbaronariera@gmail.com).
+I hope you enjoy exploring these experiments as much as I enjoyed programming them. If you are interested in talking about Rust, software architecture, or simply discussing the portfolio, you can contact me at [nbaronariera@gmail.com](mailto:nbaronariera@gmail.com). 
+
 See you next time!

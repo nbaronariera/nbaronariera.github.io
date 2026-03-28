@@ -1,0 +1,20 @@
+{
+  "name": "canvas-snake",
+  "type": "module",
+  "collaborators": [
+    "luubstar <nbaronariera@gmail.com>"
+  ],
+  "description": "Canvas snake test",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files": [
+    "canvas_snake_bg.wasm",
+    "canvas_snake.js",
+    ""
+  ],
+  "main": "canvas_snake.js",
+  "types": "canvas_snake.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

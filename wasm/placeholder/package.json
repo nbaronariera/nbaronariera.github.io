@@ -1,0 +1,20 @@
+{
+  "name": "canvas-template",
+  "type": "module",
+  "collaborators": [
+    "luubstar <nbaronariera@gmail.com>"
+  ],
+  "description": "Canvas template por my web",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files": [
+    "placeholder_bg.wasm",
+    "placeholder.js",
+    ""
+  ],
+  "main": "placeholder.js",
+  "types": "placeholder.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

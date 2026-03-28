@@ -3,6 +3,11 @@ title = "¡Bienvenido!"
 date = 2024-11-22
 description = "Bienvenido a mi portfolio. Aquí explico como funciona y muestro ejemplos interactivos"
 weight = 0
+
+[taxonomies]
+categories = ["Proyectos"]
+tags = ["rust", "wasm", "juegos"]
+
 [extra]
 imagenurl = "/wasm/snake/snake.jpg"
 highlight = true

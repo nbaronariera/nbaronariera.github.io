@@ -11,6 +11,10 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 RUST_DIR="$PROJECT_ROOT/rust"
 WASM_OUTPUT_DIR="$PROJECT_ROOT/static/wasm"
+WASM_LIB_DIR="$RUST_DIR/wasm-canvas-lib"
+
+# Módulos que no se compilan (librerías o plantillas)
+SKIP_MODULES=("template" "wasm-canvas-lib")
 
 # Colores para output
 RED='\033[0;31m'
@@ -56,10 +60,13 @@ build_module() {
         return 1
     fi
 
-    if [ "$module_name" = "template" ]; then
-        echo_warn "Saltando 'template' (es solo una plantilla)"
-        return 0
-    fi
+    # Verificar si el módulo debe saltarse
+    for skip in "${SKIP_MODULES[@]}"; do
+        if [ "$module_name" = "$skip" ]; then
+            echo_warn "Saltando '$module_name' (librería/plantilla)"
+            return 0
+        fi
+    done
 
     echo_info "Compilando módulo: $module_name"
 
@@ -85,9 +92,22 @@ build_module() {
     echo_info "Módulo '$module_name' compilado exitosamente"
 }
 
+# Verificar que la librería compile
+check_library() {
+    if [ -d "$WASM_LIB_DIR" ]; then
+        echo_info "Verificando librería wasm-canvas-lib..."
+        cd "$WASM_LIB_DIR"
+        cargo check --quiet
+        echo_info "Librería wasm-canvas-lib OK"
+    fi
+}
+
 # Compilar todos los módulos
 build_all() {
     echo_info "Compilando todos los módulos WASM..."
+
+    # Primero verificar la librería
+    check_library
 
     for module_dir in "$RUST_DIR"/*/; do
         if [ -d "$module_dir" ]; then

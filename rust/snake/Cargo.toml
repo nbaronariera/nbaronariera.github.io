@@ -1,6 +1,6 @@
 [package]
 name = "canvas-snake"
-description = "Canvas snake test"
+description = "Canvas snake game usando wasm-canvas-lib"
 license = "MIT"
 version = "1.0.0"
 authors = ["luubstar <nbaronariera@gmail.com>"]
@@ -11,12 +11,6 @@ crate-type = ["cdylib"]
 
 [dependencies]
 wasm-bindgen = "0.2"
-wee_alloc = "0.4"
-web-sys = { version = "0.3", features = ["Window", "Document", "HtmlCanvasElement",
-  "CanvasRenderingContext2d", "HtmlButtonElement", "console", "KeyboardEvent",
-  "IntersectionObserver","IntersectionObserverEntry", "IntersectionObserverInit", ]}
-paste = "1.0.9"
-wasm-bindgen-futures = "0.4"
-gloo-timers = {version="0.3.0", features = ["futures"]}
+wasm-canvas-lib = { path = "../wasm-canvas-lib" }
 getrandom = { version = "0.2", features = ["js"] }
 rand = "0.9.0-alpha.2"

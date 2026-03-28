@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="flex items-center flex-col mt-10 px-4">
+  <h1 class="text-3xl font-bold text-slate-800 dark:text-white mb-8">
+    {{ trans(key="categories", lang=lang) }}
+  </h1>
+
+  <div class="flex flex-wrap justify-center gap-4 w-full max-w-4xl">
+    {% for term in terms %}
+    <a href="{{ term.permalink }}" class="group flex flex-col items-center p-6 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 min-w-[150px]">
+      <span class="text-xl font-bold text-slate-800 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-200">
+        {{ term.name }}
+      </span>
+      <span class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+        {{ term.pages | length }} {% if term.pages | length == 1 %}post{% else %}posts{% endif %}
+      </span>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

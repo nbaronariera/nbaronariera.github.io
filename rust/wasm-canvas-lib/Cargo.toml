@@ -1,0 +1,29 @@
+[package]
+name = "wasm-canvas-lib"
+description = "Librería compartida para aplicaciones WASM de canvas"
+license = "MIT"
+version = "0.1.0"
+authors = ["luubstar <nbaronariera@gmail.com>"]
+edition = "2021"
+
+[lib]
+crate-type = ["rlib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+web-sys = { version = "0.3", features = [
+    "Window",
+    "Document",
+    "Element",
+    "HtmlCanvasElement",
+    "CanvasRenderingContext2d",
+    "HtmlButtonElement",
+    "console",
+    "KeyboardEvent",
+    "IntersectionObserver",
+    "IntersectionObserverEntry",
+    "IntersectionObserverInit",
+]}
+paste = "1.0"
+wasm-bindgen-futures = "0.4"
+gloo-timers = { version = "0.3.0", features = ["futures"] }

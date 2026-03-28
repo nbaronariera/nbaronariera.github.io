@@ -16,6 +16,3 @@ Para más información sobre mi educación, conocimientos y experiencia, visita 
 # Proyectos destacados
 
 <p></p>
-
-# Contacto
-Mi correo electrónico es [nbaronariera@gmail.com](mailto:nbaronariera@gmail.com), y [este es mi currículum](https://github.com/Luubstar/Luubstar/blob/main/Curr%C3%ADculum.pdf)

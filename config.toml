@@ -5,9 +5,16 @@ base_url = "https://nbaronariera.github.io/"
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
-build_search_index = false
+build_search_index = true
 
 theme = "blow"
+
+default_language = "es"
+
+taxonomies = [
+    {name = "tags", paginate_by = 5},
+    {name = "categories", paginate_by = 5},
+]
 
 [markdown]
 # Whether to do syntax highlighting
@@ -15,24 +22,32 @@ theme = "blow"
 highlight_code = true
 
 [extra]
-enable_search = false
+enable_search = true
 enable_sidebar = false
 enable_adsense = false
-enable_multilingue = false
+enable_multilingue = true
 adsense_link = ""
 
 [extra.lang]
 items = [
-    { lang = "en", links = [
-        { base_url = "/", name = "English" },
+    { lang = "es", links = [
+        { base_url = "/", name = "Español" },
+        { base_url = "/en", name = "English" }
     ] },
+    { lang = "en", links = [
+        { base_url = "/", name = "Español" },
+        { base_url = "/en", name = "English" }
+    ] }
 ]
 
 [extra.navbar]
 items = [
-    { lang = "en", links = [
+    { lang = "es", links = [
         { url = "/blog", name = "Blog" },
     ] },
+    { lang = "en", links = [
+        { url = "/en/blog", name = "Blog" },
+    ] }
 ]
 title = "Inicio"
 
@@ -73,3 +88,32 @@ highlight_themes_css = [
   { theme = "ayu-dark", filename = "syntax-dark.css" },
   { theme = "ayu-light", filename = "syntax-light.css" },
 ]
+
+[translations]
+home = "Inicio"
+read_more = "Leer más"
+words = "palabras"
+min = "min"
+previous = "Anterior"
+next = "Siguiente"
+all = "Todas"
+categories = "Categorías"
+toc = "Contenido"
+
+[languages.en]
+title = "Nicolás Barona Riera"
+taxonomies = [
+    {name = "tags", paginate_by = 5},
+    {name = "categories", paginate_by = 5},
+]
+
+[languages.en.translations]
+home = "Home"
+read_more = "Read more"
+words = "words"
+min = "min"
+previous = "Previous"
+next = "Next"
+all = "All"
+categories = "Categories"
+toc = "Table of Contents"

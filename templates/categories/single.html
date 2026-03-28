@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="flex items-center flex-col mt-10 px-4">
+  <h1 class="text-3xl font-bold text-slate-800 dark:text-white mb-4">
+    {{ term.name }}
+  </h1>
+
+  <p class="text-slate-600 dark:text-slate-400 mb-8">
+    {{ term.pages | length }} {% if term.pages | length == 1 %}post{% else %}posts{% endif %}
+  </p>
+
+  {# Botón para volver a todas las categorías #}
+  <div class="flex flex-wrap justify-center gap-2 mb-8 w-full max-w-6xl">
+    {% if lang == "en" %}
+    <a href="/en/blog" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-emerald-600 hover:text-white transition-colors duration-200">
+      &larr; {{ trans(key="all", lang=lang) }}
+    </a>
+    {% else %}
+    <a href="/blog" class="px-4 py-2 rounded-full text-sm font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-emerald-600 hover:text-white transition-colors duration-200">
+      &larr; {{ trans(key="all", lang=lang) }}
+    </a>
+    {% endif %}
+  </div>
+
+  <div class="flex flex-col gap-y-6 w-full max-w-6xl">
+    {% set today = now() | date(format="%Y%m%d") | int %}
+    {% for page in term.pages %}
+      {% set page_date = page.date | default(value="1970-01-01") | date(format="%Y%m%d") | int %}
+      {% if page_date <= today %}
+      <article class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 flex items-start justify-between gap-6">
+        <div class="flex flex-col flex-grow">
+          <h2 class="text-2xl font-bold text-slate-800 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors duration-200">
+            <a href="{{ page.permalink }}">{{ page.title }}</a>
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-1">{{ page.description }}</p>
+
+          <div class="flex flex-wrap items-center gap-4 mt-4 text-sm text-slate-500 dark:text-slate-400">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              {{ page.reading_time }} {{ trans(key="min", lang=lang) }}
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+              </svg>
+              {{ page.word_count }} {{ trans(key="words", lang=lang) }}
+            </span>
+            {% if page.date %}
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              {{ page.date | date(format="%d %b %Y") }}
+            </span>
+            {% endif %}
+          </div>
+
+          <div class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+            {{ page.summary | safe }}
+          </div>
+
+          <a class="inline-flex items-center gap-2 mt-4 text-emerald-600 dark:text-emerald-400 font-medium hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-200 group/link" href="{{ page.permalink }}">
+            {{ trans(key="read_more", lang=lang) }}
+            <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+
+        {% if page.extra.imagenurl %}
+          <div class="flex-shrink-0 hidden sm:block">
+            <a href="{{ page.extra.imagenurl }}" target="_blank">
+              <img src="{{ page.extra.imagenurl }}" alt="Imagen del artículo" class="w-48 h-32 rounded-lg object-cover shadow-sm hover:shadow-md transition-shadow duration-200">
+            </a>
+          </div>
+        {% endif %}
+      </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
